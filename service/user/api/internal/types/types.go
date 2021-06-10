@@ -14,3 +14,8 @@ type LoginReply struct {
 	AccessExpire int64  `json:"accessExpire"`
 	RefreshAfter int64  `json:"refreshAfter"`
 }
+
+type ChangePwdReq struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}

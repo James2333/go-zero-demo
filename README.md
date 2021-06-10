@@ -27,14 +27,17 @@
 > [!TIP]
 > 这个微小的图书借阅查询系统虽然小，从实际来讲不太符合业务场景，但是仅上面两个功能，已经满足我们对go-zeroapi/rpc的场景演示了，
 > 后续为了满足更丰富的go-zero功能演示，会在文档中进行业务插入即相关功能描述。这里仅用一个场景进行引入。
-#部署文档
-###model文件生成
+
+
+# 部署文档
+### model文件生成
 不得不说这里真的帮我们开发省去很多的麻烦，只需要sql文件就能生成相应的crud代码
 有需要的话可以直接copy二次开发,这里进到/user/model文件下
 ```
 goctl model mysql ddl -src user.sql -dir . -c
 ```
-###配置文件修改
+
+### 配置文件修改
 记得把三个服务etc/*.yaml文件里的redis,mysql,etcd改成自己的服务器地址
 并启动这些服务
 ```
@@ -48,4 +51,5 @@ go run user.go -f etc/user-api.yaml
 cd /user/rpc
 go run user.go  -f etc/user.yaml
 ```
+
 之后就可以用curl命令测试了

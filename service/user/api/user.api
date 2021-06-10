@@ -12,9 +12,15 @@ type (
 		AccessExpire int64  `json:"accessExpire"`
 		RefreshAfter int64  `json:"refreshAfter"`
 	}
+	ChangePwdReq {
+		Username string `json:"username"`
+		Password string `json:"password"`
+	}
 )
 
 service user-api {
 	@handler login
 	post /user/login (LoginReq) returns (LoginReply)
+	@handler changepwd
+	post /user/changepwd (ChangePwdReq) returns ()
 }
